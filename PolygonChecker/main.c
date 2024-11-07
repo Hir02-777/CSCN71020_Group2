@@ -145,6 +145,5 @@ int RectFunction()
 		printf("This shape does not match a rectangle\n");
 		printf("The Perimeter is :%d\n", peri2);
 	}
-
-
+	return 0;
 }
