@@ -79,61 +79,63 @@ int RectFunction()
 	int p4[2];
 	char confirmInp;
 
-	while(1)
-	{	
+	while (1)
+	{
 		printf("What is your first point's X axis(upper left)");
 		scanf_s("%d", &p1[0]);
 		printf("What is your first point's Y axis(upper left)");
 		scanf_s("%d", &p1[1]);
-		
 
-		printf("What is your first point's X axis(upper right)");
+
+		printf("What is your second point's X axis(upper right)");
 		scanf_s("%d", &p2[0]);
-		printf("What is your first point's Y axis(upper right)");
+		printf("What is your second point's Y axis(upper right)");
 		scanf_s("%d", &p2[1]);
 
 
-		printf("What is your first point's X axis(lower left)");
+		printf("What is your third point's X axis(lower left)");
 		scanf_s("%d", &p3[0]);
-		printf("What is your first point's Y axis(lower left)");
+		printf("What is your third point's Y axis(lower left)");
 		scanf_s("%d", &p3[1]);
 
-		printf("What is your first point's X axis(lower right)");
+		printf("What is your fourth point's X axis(lower right)");
 		scanf_s("%d", &p4[0]);
-		printf("What is your first point's Y axis(lower right)");
+		printf("What is your fourth point's Y axis(lower right)");
 		scanf_s("%d", &p4[1]);
 
 		printf("Are these your coordinates?\n");
-        printf("Upper Left: (%d, %d)\n", p1[0], p1[1]);
-        printf("Upper Right: (%d, %d)\n", p2[0], p2[1]);
-        printf("Lower Left: (%d, %d)\n", p3[0], p3[1]);
-        printf("Lower Right: (%d, %d)\n", p4[0], p4[1]);
-        printf("Confirm (y/n): ");
-        
-        while (getchar() != '\n');
-        scanf_s("%c", &confirmInp, 1);
+		printf("Upper Left: (%d, %d)\n", p1[0], p1[1]);
+		printf("Upper Right: (%d, %d)\n", p2[0], p2[1]);
+		printf("Lower Left: (%d, %d)\n", p3[0], p3[1]);
+		printf("Lower Right: (%d, %d)\n", p4[0], p4[1]);
+		printf("Confirm (y/n): ");
 
-        if (confirmInp == 'y' || confirmInp == 'Y') {
-            break;
-        } else if (confirmInp == 'n' || confirmInp == 'N') {
-            printf("Please re-enter the coordinates.\n");
-        } else {
-            printf("Invalid input, please enter 'y' or 'n'.\n");
-        }
+		while (getchar() != '\n');
+		scanf_s("%c", &confirmInp, 1);
+
+		if (confirmInp == 'y' || confirmInp == 'Y') {
+			break;
+		}
+		else if (confirmInp == 'n' || confirmInp == 'N') {
+			printf("Please re-enter the coordinates.\n");
+		}
+		else {
+			printf("Invalid input, please enter 'y' or 'n'.\n");
+		}
 	}
-		
+
 
 
 
 	int Upp_X_Diff = abs(p1[0] - p2[0]);
-	int Upp_Y_Diff = abs(p1[1] - p2[1]);
+	int Upp_Y_Diff = abs(p1[1] - p3[1]);
 	int Low_X_Diff = abs(p3[0] - p4[0]);
-	int Low_Y_Diff = abs(p3[1] - p4[1]);
+	int Low_Y_Diff = abs(p2[1] - p4[1]);
 
 	int area = Upp_X_Diff * Upp_Y_Diff;
 	int peri = 2 * (Upp_X_Diff + Upp_Y_Diff);
 	int peri2 = Upp_X_Diff + Upp_Y_Diff + Low_X_Diff + Low_Y_Diff;
-	if(Upp_X_Diff == Low_X_Diff && Upp_Y_Diff == Low_Y_Diff)
+	if (Upp_X_Diff == Low_X_Diff && Upp_Y_Diff == Low_Y_Diff)
 	{
 		printf("This shape matches a rectangle\n");
 		printf("The Perimeter is : %d\n", peri);
