@@ -78,8 +78,10 @@ int RectFunction()
 	int p3[2];
 	int p4[2];
 	char confirmInp;
+	int whileState = 1;
+	int whilestate2 = 1;
 
-	while (1)
+	while (whileState)
 	{
 		printf("What is your first point's X axis(upper left)");
 		scanf_s("%d", &p1[0]);
@@ -111,17 +113,22 @@ int RectFunction()
 		printf("Confirm (y/n): ");
 
 		while (getchar() != '\n');
-		scanf_s("%c", &confirmInp, 1);
-
-		if (confirmInp == 'y' || confirmInp == 'Y') {
-			break;
+		while (whilestate2)
+		{
+			scanf_s("%c", &confirmInp, 1);
+			if (confirmInp == 'y' || confirmInp == 'Y') {
+				whilestate2 = 0;
+				whileState = 0;
+			}
+			else if (confirmInp == 'n' || confirmInp == 'N') {
+				printf("Please re-enter the coordinates.\n");
+				whilestate2 = 0;
+			}
+			else {
+				printf("Invalid input, please enter 'y' or 'n'.\n");
+			}
 		}
-		else if (confirmInp == 'n' || confirmInp == 'N') {
-			printf("Please re-enter the coordinates.\n");
-		}
-		else {
-			printf("Invalid input, please enter 'y' or 'n'.\n");
-		}
+		
 	}
 
 
