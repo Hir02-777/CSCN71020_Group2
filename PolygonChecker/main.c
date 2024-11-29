@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-
+#include <string.h>
 #include "main.h"
 #include "triangleSolver.h"
 
@@ -23,8 +23,9 @@ int main() {
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
-
-			printangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
+			if (strcmp(result, "Scalene triangle") == 0 || strcmp(result, "Scalene triangle") == 0 || strcmp(result, "Scalene triangle") == 0) {
+				printangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
+			}
 			break;
 
 		case 2:
@@ -68,7 +69,11 @@ int* getTriangleSides(int* triangleSides) {
 	printf_s("Enter the three sides of the triangle: ");
 	for (int i = 0; i < 3; i++)
 	{
-		scanf_s("%d", &triangleSides[i]);
+		int tmp = scanf_s("%d", &triangleSides[i]);
+		if (tmp != 1) {
+			printf("Please enter a valid integer.\n");
+			exit(1);
+		}
 	}
 	return triangleSides;
 }

@@ -1,9 +1,12 @@
 #include "pch.h"
 #include "CppUnitTest.h"
+#include "stdio.h"
+#include "string.h"
 
 
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" double calculateangle(int a, int b, int c);
+extern "C" int* getTriangleSides(int* triangleSides);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 namespace triangletest
@@ -66,12 +69,6 @@ namespace triangletest
 			double angle = 87.13;
 			double answer = calculateangle(9, 6, 7);
 			Assert::IsTrue(angle-1 <= answer && answer <= angle + 1);
-		}
-
-	};
-	TEST_CLASS(getangletest) {
-		TEST_METHOD(test1) {
-
 		}
 	};
 }
