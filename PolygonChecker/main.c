@@ -90,28 +90,49 @@ int RectFunction()
 
 	while (whileState)
 	{
-		printf("What is your first point's X axis(upper left)");
-		scanf_s("%d", &p1[0]);
-		printf("What is your first point's Y axis(upper left)");
-		scanf_s("%d", &p1[1]);
+		printf("What is your first point's X axis(upper left)?\n");
+		if (scanf_s("%d", &p1[0]) != 1) {
+			printf("Please enter a valid number\n");
+			exit(1);
+		}
+		printf("What is your first point's Y axis(upper left)?\n");
+		if (scanf_s("%d", &p1[1]) != 1) {
+			printf("Please enter a valid number\n");
+			exit(1);
+		}
 
+		printf("What is your second point's X axis(upper right)?\n");
+		if (scanf_s("%d", &p2[0]) != 1) {
+			printf("Please enter a valid number\n");
+			exit(1);
+		}		
+		printf("What is your second point's Y axis(upper right)?\n");
+		if (scanf_s("%d", &p2[1]) != 1) {
+			printf("Please enter a valid number\n");
+			exit(1);
+		}
 
-		printf("What is your second point's X axis(upper right)");
-		scanf_s("%d", &p2[0]);
-		printf("What is your second point's Y axis(upper right)");
-		scanf_s("%d", &p2[1]);
+		printf("What is your third point's X axis(lower left)?\n");
+		if (scanf_s("%d", &p3[0]) != 1) {
+			printf("Please enter a valid number\n");
+			exit(1);
+		}		
+		printf("What is your third point's Y axis(lower left)?\n");
+		if (scanf_s("%d", &p3[1]) != 1) {
+			printf("Please enter a valid number\n");
+			exit(1);
+		}
 
-
-		printf("What is your third point's X axis(lower left)");
-		scanf_s("%d", &p3[0]);
-		printf("What is your third point's Y axis(lower left)");
-		scanf_s("%d", &p3[1]);
-
-		printf("What is your fourth point's X axis(lower right)");
-		scanf_s("%d", &p4[0]);
-		printf("What is your fourth point's Y axis(lower right)");
-		scanf_s("%d", &p4[1]);
-
+		printf("What is your fourth point's X axis(lower right)?\n");
+		if (scanf_s("%d", &p4[0]) != 1) {
+			printf("Please enter a valid number\n");
+			exit(1);
+		}		
+		printf("What is your fourth point's Y axis(lower right)?\n");
+		if (scanf_s("%d", &p4[1]) != 1) {
+			printf("Please enter a valid number\n");
+			exit(1);
+		}
 		printf("Are these your coordinates?\n");
 		printf("Upper Left: (%d, %d)\n", p1[0], p1[1]);
 		printf("Upper Right: (%d, %d)\n", p2[0], p2[1]);
